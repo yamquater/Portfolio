@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Aperçu gestion de stock">
+  <rect width="800" height="500" fill="#0d1117"/>
+  <rect x="60" y="50" width="680" height="400" rx="16" fill="#121821" stroke="#2a3340"/>
+  <rect x="60" y="50" width="680" height="46" rx="16" fill="#0f141b"/><rect x="60" y="80" width="680" height="16" fill="#0f141b"/>
+  <circle cx="88" cy="73" r="6" fill="#3a4555"/><circle cx="108" cy="73" r="6" fill="#3a4555"/><circle cx="128" cy="73" r="6" fill="#c6ef6a"/>
+  <rect x="90" y="116" width="360" height="40" rx="10" fill="#0f141b" stroke="#c6ef6a"/>
+  <text x="108" y="141" font-family="monospace" font-size="15" fill="#e8edf3">Rechercher : ciment</text>
+  <rect x="90" y="160" width="360" height="74" rx="10" fill="#1b2330" stroke="#2a3340"/>
+  <g font-family="monospace" font-size="13" fill="#8592a2"><text x="108" y="186" fill="#c6ef6a">ART-0142  Ciment 50 kg</text><text x="108" y="210">ART-0143  Ciment blanc 25 kg</text></g>
+  <rect x="480" y="116" width="230" height="40" rx="10" fill="#c6ef6a"/><text x="530" y="141" font-family="monospace" font-size="14" fill="#141a08">+ Entrée stock</text>
+  <g font-family="monospace" font-size="12" fill="#566173"><text x="100" y="272">ID</text><text x="200" y="272">ARTICLE</text><text x="450" y="272">QTÉ</text><text x="560" y="272">STATUT</text></g>
+  <g stroke="#2a3340"><path d="M90 282h620M90 318h620M90 354h620M90 390h620M90 426h620"/></g>
+  <g font-family="monospace" font-size="13" fill="#b7c1cd">
+    <text x="100" y="306">0142</text><text x="200" y="306">Ciment 50 kg</text><text x="450" y="306">238</text>
+    <text x="100" y="342">0217</text><text x="200" y="342">Fer à béton 10 mm</text><text x="450" y="342">64</text>
+    <text x="100" y="378">0309</text><text x="200" y="378">Tôle ondulée</text><text x="450" y="378">7</text>
+    <text x="100" y="414">0388</text><text x="200" y="414">Peinture 20 L</text><text x="450" y="414">41</text>
+  </g>
+  <g><rect x="560" y="292" width="70" height="20" rx="10" fill="#1f2a16"/><rect x="560" y="328" width="70" height="20" rx="10" fill="#1f2a16"/><rect x="560" y="364" width="70" height="20" rx="10" fill="#3a1e1a"/><rect x="560" y="400" width="70" height="20" rx="10" fill="#1f2a16"/></g>
+  <g font-family="monospace" font-size="11"><text x="575" y="306" fill="#c6ef6a">OK</text><text x="575" y="342" fill="#c6ef6a">OK</text><text x="568" y="378" fill="#ff8a7a">BAS</text><text x="575" y="414" fill="#c6ef6a">OK</text></g>
+</svg>

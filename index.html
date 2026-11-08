@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>YE ADAMA — Développeur Web & Mobile | Portfolio</title>
+  <meta name="description" content="YE ADAMA, développeur web & mobile et étudiant en Génie Logiciel (Université Aube Nouvelle, Bobo-Dioulasso). Projets React, Node.js, Android, Arduino. Disponible pour stages et collaborations." />
+  <meta name="author" content="YE ADAMA" />
+  <meta name="theme-color" content="#0b0e13" />
+  <link rel="canonical" href="https://yamquater.netlify.app/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="YE ADAMA — Développeur Web & Mobile" />
+  <meta property="og:description" content="Applications web, mobiles et outils d'automatisation. Découvrez mes projets et contactez-moi pour un stage ou une collaboration." />
+  <meta property="og:url" content="https://yamquater.netlify.app/" />
+  <meta property="og:site_name" content="YE ADAMA — Portfolio" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="YE ADAMA — Développeur Web & Mobile" />
+  <meta name="twitter:description" content="Applications web, mobiles et outils d'automatisation. Projets React, Node.js, Android, Arduino." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "YE ADAMA",
+    "jobTitle": "Développeur Web & Mobile",
+    "url": "https://yamquater.netlify.app/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bobo-Dioulasso", "addressCountry": "BF" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Université Aube Nouvelle" },
+    "knowsAbout": ["Développement web", "React", "Node.js", "Android", "Arduino", "Bureautique"],
+    "sameAs": ["https://github.com/yamquater", "https://www.linkedin.com/in/yamquater"]
+  }
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Scène 3D (chargée en différé, purement décorative pour les lecteurs d'écran) -->
+  <div class="scene" id="scene" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Sprite d'icônes -->
+  <svg width="0" height="0" class="sr-only" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-5-5 1.3-1.3a4 4 0 0 0-5-5L3 11"/><path d="m3 11 3-3 2 2"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="YE ADAMA — retour en haut">
+      <span class="brand__mark" aria-hidden="true">YA</span>
+      <span class="brand__name">YE&nbsp;ADAMA</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#journey">Parcours</a></li>
+        <li><a href="#experience">Expériences</a></li>
+        <li><a href="#goals">Objectifs</a></li>
+        <li class="nav__cta"><a class="btn btn--small btn--accent" href="#contact">Me contacter</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">
+      <span class="sr-only">Ouvrir le menu</span>
+      <span class="menu-btn__bar"></span><span class="menu-btn__bar"></span>
+    </button>
+  </header>
+
+  <!-- Rail de chapitres synchronisé avec la scène 3D -->
+  <nav class="rail" id="rail" aria-label="Chapitres">
+    <ol>
+      <li><a href="#top" data-rail="0"><span>Intro</span></a></li>
+      <li><a href="#about" data-rail="1"><span>À propos</span></a></li>
+      <li><a href="#skills" data-rail="2"><span>Compétences</span></a></li>
+      <li><a href="#projects" data-rail="3"><span>Projets</span></a></li>
+      <li><a href="#journey" data-rail="4"><span>Parcours</span></a></li>
+      <li><a href="#experience" data-rail="5"><span>Expériences</span></a></li>
+      <li><a href="#goals" data-rail="6"><span>Objectifs</span></a></li>
+      <li><a href="#contact" data-rail="7"><span>Contact</span></a></li>
+    </ol>
+  </nav>
+  <div class="hud" aria-hidden="true">
+    <span class="hud__index" id="hudIndex">00</span>
+    <span class="hud__sep"></span>
+    <span class="hud__label" id="hudLabel">Intro</span>
+  </div>
+
+  <main id="main">
+    <!-- ============ A. HERO ============ -->
+    <section class="hero chapter" id="top" data-shape="0" data-label="Intro" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <p class="eyebrow hero__in" style="--d:0">
+          <span class="status-dot" aria-hidden="true"></span>
+          Disponible — stage d'environ 3 mois &amp; collaborations
+        </p>
+        <h1 class="hero__title hero__in" id="hero-title" style="--d:1">
+          <span class="hero__name">YE ADAMA</span>
+          <span class="hero__role">Développeur <em>web&nbsp;&amp;&nbsp;mobile</em></span>
+        </h1>
+        <p class="hero__lead hero__in" style="--d:2">
+          Je transforme des idées en outils concrets&nbsp;: applications web temps réel, apps Android,
+          automatisations et prototypes électroniques. Étudiant en licence 2 génie informatique à l'Université Aube Nouvelle, je livre des projets pour des clients depuis 2025.
+        </p>
+        <div class="hero__actions hero__in" style="--d:3">
+          <a class="btn btn--accent" href="#projects">Découvrir mes projets <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="#contact">Me contacter</a>
+          <a class="btn btn--link" href="/cv"><svg class="icon"><use href="#i-file"/></svg> Voir mon CV</a>
+        </div>
+        <dl class="hero__facts hero__in" style="--d:4">
+          <div><dt>Depuis</dt><dd>2025</dd><span>développeur freelance</span></div>
+          <div><dt>Terrain</dt><dd>Web · Mobile · Embarqué</dd><span>du navigateur au capteur</span></div>
+          <div><dt>Base</dt><dd>Bobo-Dioulasso</dd><span>Burkina Faso · à distance</span></div>
+        </dl>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Faire défiler vers À propos"><span></span></a>
+    </section>
+
+    <!-- ============ B. À PROPOS ============ -->
+    <section class="section chapter" id="about" data-shape="1" data-label="À propos" aria-labelledby="about-title">
+      <header class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2 class="section__title" id="about-title">Un développeur qui <em>livre</em>.</h2>
+      </header>
+
+      <div class="about">
+        <div class="about__text reveal">
+          <p class="lead">
+            Je suis en Licence 2 Génie Logiciel à l'Université Aube Nouvelle et, en parallèle de ma formation,
+            je développe des solutions réelles pour de vrais utilisateurs&nbsp;: sites vitrines et applications sur mesure
+            pour des clients locaux, une application Android de gestion de stock réalisée en stage,
+            une plateforme d'échange anonyme et un robot détecteur d'objets dangereux.
+          </p>
+          <p>
+            Ce qui me motive&nbsp;: construire des outils utiles pour les étudiants, les commerçants et les petites organisations,
+            qui n'ont pas toujours accès à des logiciels adaptés à leurs besoins. J'apprends vite parce que j'apprends en
+            construisant&nbsp;— chaque projet m'a fait découvrir une nouvelle couche de la pile, de l'interface React jusqu'au
+            microcontrôleur.
+          </p>
+          <p>
+            Mon ambition&nbsp;: devenir un ingénieur logiciel polyvalent, capable de concevoir un produit de bout en bout
+            et de l'adapter aux réalités du terrain.
+          </p>
+        </div>
+
+        <aside class="about__side">
+          <article class="manifesto reveal">
+            <span class="kicker">Ma philosophie</span>
+            <h3>L'objectivité productive</h3>
+            <p>Si une tâche se répète, je l'automatise. Je préfère passer une heure à construire l'outil qui fera gagner
+              des journées, plutôt que refaire dix fois la même chose à la main.</p>
+          </article>
+          <ul class="pillars reveal">
+            <li><strong>Concret</strong><span>Des projets utilisés, pas seulement des exercices.</span></li>
+            <li><strong>Polyvalent</strong><span>Web, mobile, bases de données, électronique.</span></li>
+            <li><strong>Autonome</strong><span>Habitué à gérer un projet client du besoin à la livraison.</span></li>
+          </ul>
+          <p class="interests reveal"><span class="kicker">Aussi</span> Électronique · Création de contenu · Outils pour étudiants</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ C. COMPÉTENCES ============ -->
+    <section class="section chapter" id="skills" data-shape="2" data-label="Compétences" aria-labelledby="skills-title">
+      <header class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2 class="section__title" id="skills-title">Compétences <em>techniques</em></h2>
+        <p class="section__intro">Chaque compétence est reliée au projet ou à l'expérience où je l'ai mise en pratique.</p>
+      </header>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-card__top"><svg class="icon icon--lg"><use href="#i-globe"/></svg><h3>Développement Web</h3></div>
+          <ul class="chips">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>API REST</li><li>Responsive design</li>
+          </ul>
+          <p class="proof"><span>Mis en pratique</span> InboxX · Missions freelance</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top"><svg class="icon icon--lg"><use href="#i-terminal"/></svg><h3>Programmation</h3></div>
+          <ul class="chips"><li>JavaScript</li><li>Java</li><li>Kotlin</li><li>C++</li><li>Python</li></ul>
+          <p class="proof"><span>Mis en pratique</span> App Android · Robot · Gestion de stock</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top"><svg class="icon icon--lg"><use href="#i-db"/></svg><h3>Bases de données</h3></div>
+          <ul class="chips"><li>MongoDB</li><li>MySQL</li><li>Firebase</li></ul>
+          <p class="proof"><span>Mis en pratique</span> InboxX (SQL) · Stage (Firebase, synchro cloud)</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top"><svg class="icon icon--lg"><use href="#i-phone"/></svg><h3>Développement mobile</h3></div>
+          <ul class="chips"><li>Android</li><li>Java</li><li>Kotlin</li><li>React Native</li></ul>
+          <p class="proof"><span>Mis en pratique</span> Stage — application Android de gestion de stock</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top"><svg class="icon icon--lg"><use href="#i-cpu"/></svg><h3>Systèmes &amp; embarqué</h3></div>
+          <ul class="chips"><li>Arduino</li><li>Capteurs</li><li>Électronique</li><li>Télécommande sans fil</li></ul>
+          <p class="proof"><span>Mis en pratique</span> Robot détecteur d'objets dangereux(En cours...)</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top"><svg class="icon icon--lg"><use href="#i-tool"/></svg><h3>Outils &amp; environnements</h3></div>
+          <ul class="chips"><li>Git &amp; GitHub</li><li>Figma</li><li>Excel VBA &amp; macros</li></ul>
+          <p class="proof"><span>Mis en pratique</span> Dépôts GitHub publics · Bot whatsapp</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ D. PROJETS ============ -->
+    <section class="section chapter" id="projects" data-shape="3" data-label="Projets" aria-labelledby="projects-title">
+      <header class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2 class="section__title" id="projects-title">Projets <em>sélectionnés</em></h2>
+        <p class="section__intro">Trois réalisations, trois terrains&nbsp;: le web temps réel, le matériel et l'automatisation métier.</p>
+      </header>
+
+      <div class="projects">
+        <article class="project project--featured reveal" data-tilt>
+          <div class="project__media">
+            <img src="/projects/icon.webp" alt="Aperçu du logo d'InboxX" width="512" height="512" loading="lazy" decoding="async" />
+          </div>
+          <div class="project__body">
+            <p class="project__meta"><span>01</span> Application web / mobile · Temps réel</p>
+            <h3 class="project__title">InboxX</h3>
+            <p class="project__desc">Plateforme d'interaction anonyme&nbsp;: réponses anonymisées, salons anonymes et modération, avec une interface responsive.</p>
+            <ul class="chips chips--small"><li>React</li><li>Node.js</li><li>Firebase</li><li>Supabase</li></ul>
+            <div class="project__actions">
+              <button class="btn btn--accent btn--small" type="button" data-open="dlg-shadowchat">Étude du projet <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <span class="btn btn--ghost btn--small" aria-disabled="true"><svg class="icon"><use href="#i-github"/></svg>🔒 Code source privé</span>
+              <a class="btn btn--link btn--small" href="https://inbox-x.web.app" target="_blank" rel="noopener noreferrer">Démo <svg class="icon"><use href="#i-out"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-tilt>
+          <div class="project__media">
+            <img src="/projects/robot.webp" alt="Schéma illustré du robot : châssis, capteurs et liaison radio" width="1024" height="1024" loading="lazy" decoding="async" />
+          </div>
+          <div class="project__body">
+            <p class="project__meta"><span>02</span> Projet étudiant · Électronique</p>
+            <h3 class="project__title">Robot détecteur d'objets dangereux</h3>
+            <p class="project__desc">Robot à capteurs qui détecte des objets dangereux, déclenche une alerte sonore et se pilote à distance jusqu'à ~100&nbsp;m.</p>
+            <ul class="chips chips--small"><li>Arduino</li><li>C++</li><li>Électronique</li><li>Capteurs</li></ul>
+            <div class="project__actions">
+              <button class="btn btn--accent btn--small" type="button" data-open="dlg-robot">Étude du projet <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <a class="btn btn--ghost btn--small" href="https://github.com/yamquater/robot-securite" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> Documentation</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-tilt>
+          <div class="project__media">
+            <img src="/projects/stock.svg" alt="Aperçu illustré d'un classeur Excel de gestion de stock avec recherche" width="800" height="500" loading="lazy" decoding="async" />
+          </div>
+          <div class="project__body">
+            <p class="project__meta"><span>03</span> Automatisation · Outil métier</p>
+            <h3 class="project__title">Gestion de stock Excel VBA</h3>
+            <p class="project__desc">Classeur professionnel automatisé&nbsp;: suggestions automatiques, recherche par nom ou identifiant, macros pour les opérations courantes.</p>
+            <ul class="chips chips--small"><li>Excel VBA</li><li>Macros</li><li>Automatisation</li></ul>
+            <div class="project__actions">
+              <button class="btn btn--accent btn--small" type="button" data-open="dlg-stock">Étude du projet <svg class="icon"><use href="#i-arrow"/></svg></button>
+              <a class="btn btn--ghost btn--small" href="https://github.com/yamquater/excel-stock" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> Télécharger</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ E. PARCOURS ============ -->
+    <section class="section chapter" id="journey" data-shape="4" data-label="Parcours" aria-labelledby="journey-title">
+      <header class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2 class="section__title" id="journey-title">Parcours &amp; <em>formation</em></h2>
+        <p class="section__intro">Formation académique et pratique professionnelle avancent en parallèle.</p>
+      </header>
+
+      <ol class="timeline" id="timeline">
+        <li class="tl-item reveal">
+          <span class="tl-item__node" aria-hidden="true"></span>
+          <button class="tl-item__head" type="button" aria-expanded="true">
+            <span class="tl-item__date">En cours</span>
+            <span class="tl-item__title">Licence Génie Informatique — 2<sup>eme</sup> année</span>
+            <span class="tl-item__org">High Tech · Université Aube Nouvelle, Bobo-Dioulasso</span>
+            <span class="tl-tag">Formation</span>
+          </button>
+          <div class="tl-item__body">
+            <p>Formation aux fondamentaux de l'informatique&nbsp;: algorithmique, programmation et bases théoriques, complétée par des projets étudiants comme le développement des logiciels(Inboxx).</p>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-item__node" aria-hidden="true"></span>
+          <button class="tl-item__head" type="button" aria-expanded="false">
+            <span class="tl-item__date">Janv. 2025 → aujourd'hui</span>
+            <span class="tl-item__title">Développeur web freelance</span>
+            <span class="tl-item__org">Projets indépendants · clients locaux</span>
+            <span class="tl-tag tl-tag--exp">Expérience</span>
+          </button>
+          <div class="tl-item__body">
+            <p>Conception de sites vitrines et d'applications sur mesure, du recueil du besoin à la mise en ligne, en frontend comme en backend.</p>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-item__node" aria-hidden="true"></span>
+          <button class="tl-item__head" type="button" aria-expanded="false">
+            <span class="tl-item__date">Juin → Août 2024</span>
+            <span class="tl-item__title">Stage en ligne de développement mobile</span>
+            <span class="tl-item__org">Grande Session de Formation Tech</span>
+            <span class="tl-tag tl-tag--exp">Expérience</span>
+          </button>
+          <div class="tl-item__body">
+            <p>Développement d'une application Android de gestion de stock avec synchronisation cloud (Firebase) et consommation d'API REST.</p>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-item__node" aria-hidden="true"></span>
+          <button class="tl-item__head" type="button" aria-expanded="false">
+            <span class="tl-item__date">En parallèle</span>
+            <span class="tl-item__title">Projets personnels &amp; académiques</span>
+            <span class="tl-item__org">InboxX · Robot de sécurité · Gestion de stock VBA</span>
+            <span class="tl-tag tl-tag--proj">Projets</span>
+          </button>
+          <div class="tl-item__body">
+            <p>Des projets choisis pour explorer de nouveaux terrains&nbsp;: le temps réel et la modération sur le web, l'électronique embarquée et l'automatisation d'outils métier.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ F. EXPÉRIENCES ============ -->
+    <section class="section chapter" id="experience" data-shape="5" data-label="Expériences" aria-labelledby="experience-title">
+      <header class="section__head reveal">
+        <span class="section__num">05</span>
+        <h2 class="section__title" id="experience-title">Expériences &amp; <em>réalisations</em></h2>
+      </header>
+
+      <div class="exp-grid">
+        <article class="exp-card reveal">
+          <p class="exp-card__when">Janv. 2025 — Présent</p>
+          <h3>Développeur Web Freelance</h3>
+          <p class="exp-card__org">Projets indépendants</p>
+          <ul class="exp-card__list">
+            <li>Création de sites vitrines et d'applications sur mesure pour des clients locaux.</li>
+            <li>Développement frontend et backend avec des technologies modernes.</li>
+            <li>Relation directe avec le client&nbsp;: compréhension du besoin, livraison, ajustements.</li>
+          </ul>
+          <ul class="chips chips--small"><li>HTML/CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li></ul>
+        </article>
+
+        <article class="exp-card reveal">
+          <p class="exp-card__when">Juin — Août 2024</p>
+          <h3>Stagiaire Développeur Mobile (en ligne)</h3>
+          <p class="exp-card__org">Grande Session de Formation Tech</p>
+          <ul class="exp-card__list">
+            <li>Développement d'une application Android de gestion de stock.</li>
+            <li>Synchronisation des données dans le cloud avec Firebase.</li>
+            <li>Conception d'une interface utilisateur pensée pour un usage quotidien.</li>
+          </ul>
+          <ul class="chips chips--small"><li>Android</li><li>Java</li><li>Firebase</li><li>API REST</li></ul>
+        </article>
+
+        <article class="achievements reveal">
+          <span class="kicker">Réalisations clés</span>
+          <ul>
+            <li><strong>Temps réel</strong> Plateforme d'échange anonyme avec salons et modération IA.</li>
+            <li><strong>Mobile</strong> Application Android de stock synchronisée dans le cloud.</li>
+            <li><strong>Matériel</strong> Robot à capteurs pilotable à ~100&nbsp;m avec alerte sonore.</li>
+            <li><strong>Automatisation</strong> Outil de stock Excel avec recherche et suggestions automatiques.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ G. OBJECTIFS ============ -->
+    <section class="section chapter" id="goals" data-shape="6" data-label="Objectifs" aria-labelledby="goals-title">
+      <header class="section__head reveal">
+        <span class="section__num">06</span>
+        <h2 class="section__title" id="goals-title">Ce que je <em>recherche</em></h2>
+        <p class="section__intro">Des opportunités où je peux apprendre vite et contribuer dès le premier jour.</p>
+      </header>
+
+      <div class="goals">
+        <article class="goal reveal">
+          <svg class="icon icon--lg"><use href="#i-briefcase"/></svg>
+          <h3>Stage</h3>
+          <p>D'environ 3 mois, en développement web, mobile ou full-stack, au sein d'une équipe où le code part en production.</p>
+        </article>
+        <article class="goal reveal">
+          <svg class="icon icon--lg"><use href="#i-users"/></svg>
+          <h3>Collaboration technique</h3>
+          <p>Rejoindre des développeurs sur un projet open source, un hackathon ou un produit en construction.</p>
+        </article>
+        <article class="goal reveal">
+          <svg class="icon icon--lg"><use href="#i-target"/></svg>
+          <h3>Missions &amp; opportunités</h3>
+          <p>Sites, applications ou automatisations pour entreprises, entrepreneurs et organisations.</p>
+        </article>
+        <article class="goal reveal">
+          <svg class="icon icon--lg"><use href="#i-spark"/></svg>
+          <h3>Projets innovants</h3>
+          <p>Des idées qui mêlent logiciel et terrain&nbsp;: outils pour étudiants, objets connectés, solutions locales.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ H. CONTACT ============ -->
+    <section class="section chapter contact" id="contact" data-shape="7" data-label="Contact" aria-labelledby="contact-title">
+      <div class="contact__grid">
+        <div class="contact__intro reveal">
+          <span class="section__num">07</span>
+          <h2 class="section__title" id="contact-title">Construisons <em>quelque chose</em>.</h2>
+          <p class="lead">Un stage, une mission, une idée de projet&nbsp;? Écrivez-moi&nbsp;: je réponds personnellement à chaque message.</p>
+
+          <ul class="channels">
+            <li>
+              <a class="channel" href="mailto:ye.adama.76@email.com">
+                <svg class="icon"><use href="#i-mail"/></svg>
+                <span><small>E-mail</small>ye.adama.76@email.com</span>
+              </a>
+              <button class="copy-btn" type="button" data-copy="ye.adama.76@email.com" aria-label="Copier l'adresse e-mail">
+                <svg class="icon"><use href="#i-copy"/></svg>
+              </button>
+            </li>
+            <li>
+              <a class="channel" href="https://github.com/yamquater" target="_blank" rel="noopener noreferrer">
+                <svg class="icon"><use href="#i-github"/></svg>
+                <span><small>GitHub</small>github.com/yamquater</span>
+              </a>
+            </li>
+            <li>
+              <a class="channel" href="https://www.linkedin.com/in/yamquater" target="_blank" rel="noopener noreferrer">
+                <svg class="icon"><use href="#i-linkedin"/></svg>
+                <span><small>LinkedIn</small>linkedin.com/in/yamquater</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="channel" href="https://wa.me/22676907222" target="_blank" rel="noopener noreferrer">
+                <svg class="icon"><use href="#i-phone"/></svg>
+                <span><small>WhatsApp</small>+226 76 90 72 22</span>
+              </a>
+            </li>
+            <li>
+              <span class="channel channel--static">
+                <svg class="icon"><use href="#i-pin"/></svg>
+                <span><small>Localisation</small>Bobo-Dioulasso, Burkina Faso</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form reveal" name="contact" method="POST" action="https://api.web3forms.com/submit" id="contactForm" novalidate>
+          <!-- Clé publique Web3Forms : à remplacer par la vôtre (reçue par e-mail sur web3forms.com) -->
+          <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS" />
+          <input type="hidden" name="subject" value="Nouveau message depuis le portfolio" />
+          <input type="hidden" name="from_name" value="Portfolio YE ADAMA" />
+          <p class="hp" aria-hidden="true"><label>Ne pas cocher : <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label></p>
+
+          <div class="field">
+            <label for="f-name">Nom</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" />
+            <p class="field__error" id="e-name"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="120" />
+            <p class="field__error" id="e-email"></p>
+          </div>
+          <fieldset class="field field--choices">
+            <legend>Objet</legend>
+            <div class="choices">
+              <label><input type="radio" name="topic" value="Stage" checked /><span>Stage</span></label>
+              <label><input type="radio" name="topic" value="Collaboration" /><span>Collaboration</span></label>
+              <label><input type="radio" name="topic" value="Mission / projet client" /><span>Mission</span></label>
+              <label><input type="radio" name="topic" value="Autre" /><span>Autre</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" required minlength="10" maxlength="3000"></textarea>
+            <p class="field__error" id="e-message"></p>
+          </div>
+
+          <button class="btn btn--accent btn--block" type="submit">
+            <span class="btn__label">Envoyer le message</span>
+            <svg class="icon"><use href="#i-arrow"/></svg>
+          </button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>© <span id="year">2026</span> YE ADAMA — Développeur web &amp; mobile</p>
+      <nav aria-label="Liens secondaires">
+        <a href="/cv">CV</a>
+        <a href="https://github.com/yamquater" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/yamquater" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#top">Haut de page ↑</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============ ÉTUDES DE PROJET ============ -->
+  <dialog class="case" id="dlg-shadowchat" aria-labelledby="dlg-shadowchat-title">
+    <div class="case__inner">
+      <button class="case__close" type="button" data-close aria-label="Fermer"><svg class="icon"><use href="#i-x"/></svg></button>
+      <p class="project__meta"><span>01</span> Application web / mobile · Temps réel</p>
+      <h2 id="dlg-shadowchat-title">InboxX</h2>
+      <img class="case__media" src="/projects/shadowchat.svg" alt="" width="800" height="500" loading="lazy" decoding="async" />
+      <div class="case__cols">
+        <div>
+          <h3>Problématique</h3>
+          <p>Permettre aux utilisateurs de s'exprimer et de recevoir des retours sincères sans révéler leur identité, tout en évitant que l'anonymat ne devienne un terrain d'abus.</p>
+          <h3>Fonctionnalités principales</h3>
+          <ul>
+            <li>Réponses anonymisées à un lien de profil partageable.</li>
+            <li>Salons de discussion anonymes en temps réel.</li>
+            <li>Expérience ludique grâce à nos jeux intégrés avec des scores au défis.</li>
+            <li>Interface responsive, utilisable sur mobile comme sur ordinateur.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Solutions techniques</h3>
+          <ul>
+            <li><strong>Temps réel</strong> — communication bidirectionnelle.</li>
+            <li><strong>API</strong> — serveur Node.js.</li>
+            <li><strong>Données</strong> — persistance des messages et salons.</li>
+            <li><strong>Interface</strong> — application React responsive.</li>
+          </ul>
+          <h3>Stack</h3>
+          <ul class="chips chips--small"><li>React</li><li>JavaScript</li><li>Supabase</li><li>Firebase</li></ul>
+        </div>
+      </div>
+      <div class="case__actions">
+        <span class="btn btn--accent btn--small" aria-disabled="true"><svg class="icon"><use href="#i-github"/></svg> 🔒 Code source privé</span>
+        <a class="btn btn--ghost btn--small" href="https://inbox-x.web.app" target="_blank" rel="noopener noreferrer">Voir l'app <svg class="icon"><use href="#i-out"/></svg></a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="dlg-robot" aria-labelledby="dlg-robot-title">
+    <div class="case__inner">
+      <button class="case__close" type="button" data-close aria-label="Fermer"><svg class="icon"><use href="#i-x"/></svg></button>
+      <p class="project__meta"><span>02</span> Projet étudiant · Électronique</p>
+      <h2 id="dlg-robot-title">Robot détecteur d'objets dangereux (En cours...)</h2>
+      <img class="case__media" src="/projects/robot.svg" alt="" width="800" height="500" loading="lazy" decoding="async" />
+      <div class="case__cols">
+        <div>
+          <h3>Problématique</h3>
+          <p>Repérer un objet potentiellement dangereux sans exposer une personne&nbsp;: le robot s'approche, détecte et alerte pendant que l'opérateur reste à distance.</p>
+          <h3>Fonctionnalités principales</h3>
+          <ul>
+            <li>Détection par capteurs embarqués.</li>
+            <li>Alerte sonore lors d'une détection.</li>
+            <li>Pilotage à distance, portée d'environ 100&nbsp;m.</li>
+            <li>Conception simple et reproductible, adaptée à un projet étudiant.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Solutions techniques</h3>
+          <ul>
+            <li><strong>Contrôle</strong> — microcontrôleur Arduino programmé en C++.</li>
+            <li><strong>Perception</strong> — intégration et lecture de capteurs.</li>
+            <li><strong>Électronique</strong> — câblage, alimentation et module de communication sans fil.</li>
+          </ul>
+          <h3>Stack</h3>
+          <ul class="chips chips--small"><li>Arduino</li><li>C++</li><li>Électronique</li><li>Capteurs</li></ul>
+        </div>
+      </div>
+      <div class="case__actions">
+        <a class="btn btn--accent btn--small" href="https://github.com/yamquater/robot-securite" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> Documentation</a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="dlg-stock" aria-labelledby="dlg-stock-title">
+    <div class="case__inner">
+      <button class="case__close" type="button" data-close aria-label="Fermer"><svg class="icon"><use href="#i-x"/></svg></button>
+      <p class="project__meta"><span>03</span> Automatisation · Outil métier</p>
+      <h2 id="dlg-stock-title">Gestion de stock Excel VBA</h2>
+      <img class="case__media" src="/projects/stock.svg" alt="" width="800" height="500" loading="lazy" decoding="async" />
+      <div class="case__cols">
+        <div>
+          <h3>Problématique</h3>
+          <p>Offrir aux petites structures un suivi de stock fiable sans logiciel coûteux, avec un outil qu'elles maîtrisent déjà&nbsp;: Excel.</p>
+          <h3>Fonctionnalités principales</h3>
+          <ul>
+            <li>Suggestions automatiques lors de la saisie.</li>
+            <li>Recherche d'un article par nom ou par identifiant.</li>
+            <li>Automatisation complète des opérations courantes par macros.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Solutions techniques</h3>
+          <ul>
+            <li><strong>Logique</strong> — macros VBA pilotant les feuilles de calcul.</li>
+            <li><strong>Ergonomie</strong> — formulaires et recherche pour limiter les erreurs de saisie.</li>
+          </ul>
+          <h3>Stack</h3>
+          <ul class="chips chips--small"><li>Excel VBA</li><li>Macros</li><li>Automatisation</li></ul>
+        </div>
+      </div>
+      <div class="case__actions">
+        <a class="btn btn--accent btn--small" href="https://github.com/yamquater/excel-stock" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> Télécharger le fichier</a>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript><style>.reveal,.hero__in{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
