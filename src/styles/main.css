@@ -421,3 +421,6 @@ a.channel:hover { border-color: var(--accent); transform: translateX(4px); }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal, .hero__in { opacity: 1; transform: none; }
 }
+
+/* Contact : alternative WhatsApp sous le formulaire */
+.form__alt { margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--line); display: grid; gap: .7rem; text-align: center; color: var(--text-2); font-size: .95rem; }

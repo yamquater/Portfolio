@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /merci
 
-Sitemap: https://yamquater.netlify.app/sitemap.xml
+Sitemap: https://portfolio.yamquater04.workers.dev/sitemap.xml
