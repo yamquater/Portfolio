@@ -1,0 +1,10 @@
+{
+  // Déploiement de fichiers statiques (le dossier "dist" produit par `npm run build`).
+  // "name" doit être identique au nom du projet créé dans Cloudflare.
+  "name": "yamquater-portfolio",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
